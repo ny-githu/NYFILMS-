@@ -1,1 +1,76 @@
+  <div class="search-row">
+    <div class="search" role="search" aria-label="Search films">
+      <input id="q" type="search" placeholder="Search films, year, actor..." />
+    </div>
+    <div class="filters" aria-hidden>
+      <button class="btn" data-filter="all">All</button>
+      <button class="btn" data-filter="drama">Drama</button>
+      <button class="btn" data-filter="comedy">Comedy</button>
+      <button class="btn" data-filter="documentary">Documentary</button>
+    </div>
+  </div>
+</header>
 
+<main>
+  <section>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <div style="color:var(--muted)">Showing <span id="count">0</span> films</div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <select id="sort" style="background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px;color:var(--muted)">
+          <option value="new">Newest</option>
+          <option value="popular">Most downloaded</option>
+          <option value="alpha">A → Z</option>
+        </select>
+        <button class="btn primary" id="upload">Upload film</button>
+      </div>
+    </div>
+
+    <div id="grid" class="grid" aria-live="polite">
+      <!-- Film cards will be inserted here -->
+    </div>
+
+    <div id="empty" class="empty" hidden>No films match your search.</div>
+  </section>
+
+  <aside class="panel" aria-label="Sidebar">
+    <div style="margin-bottom:12px">
+      <h3 style="margin:0 0 8px 0">Featured</h3>
+      <div class="featured">
+        <div class="thumb" id="featured-thumb" style="background-image:url('https://via.placeholder.com/160x240');"></div>
+        <div>
+          <div id="featured-title" style="font-weight:700">Featured Film Title</div>
+          <div class="meta" id="featured-year">2026 • 2h 01m</div>
+          <div style="margin-top:8px">
+            <a href="#" class="download" style="display:inline-block;padding:6px 10px;font-size:0.9rem">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:12px">
+      <h4 style="margin:0 0 8px 0">Categories</h4>
+      <div class="tags" id="category-list">
+        <button class="tag" data-cat="drama">Drama</button>
+        <button class="tag" data-cat="comedy">Comedy</button>
+        <button class="tag" data-cat="documentary">Documentary</button>
+        <button class="tag" data-cat="short">Short</button>
+        <button class="tag" data-cat="family">Family</button>
+        <button class="tag" data-cat="kids">Kids</button>
+      </div>
+    </div>
+
+    <div>
+      <h4 style="margin:0 0 8px 0">Legal / Contact</h4>
+      <div class="notice">
+        Only authorized and rights-cleared content is hosted here. To report takedown requests or request distribution, email: <a href="mailto:legal@nyfilms.example" style="color:#ffd7b5">legal@nyfilms.example</a>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+    <div>© <span id="year"></span> NYFILMS — All rights reserved.</div>
+    <div style="color:var(--muted);font-size:0.9rem">Built for legal distribution. Not a source for copyright-infringing downloads.</div>
+  </div>
+</footer>
